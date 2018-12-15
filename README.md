@@ -18,7 +18,7 @@ Finally, add the following code to your `init.el`:
 
 ```elisp
 (require 'lsp-sourcekit)
-(setenv "SOURCEKIT_TOOLCHAIN_PATH" "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2018-11-25-a.xctoolchain")
+(setenv "SOURCEKIT_TOOLCHAIN_PATH" "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2018-12-07-a.xctoolchain")
 (setq lsp-sourcekit-executable (expand-file-name "<path_to_sourcekit-lsp_executable>"))
 ```
 
