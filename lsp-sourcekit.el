@@ -5,7 +5,7 @@
 ;; Author: Daniel Martín
 ;; Version: 0.1
 ;; Homepage: https://github.com/emacs-lsp/lsp-sourcekit
-;; Package-Requires: ((emacs "25.1") (lsp-mode "4.2"))
+;; Package-Requires: ((emacs "25.1") (lsp-mode "5"))
 ;; Keywords: languages, lsp, swift, objective-c, c++
 
 ;; Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,21 +29,20 @@
 ;;; Commentary:
 
 ;;
-;; Call (lsp-sourcekit-swift-enable) in your swift-mode hook.
+;; Call (lsp) after visiting a file in swift-mode major mode.
 ;;
 ;; TODO: Configure the Objective-C/C++ LSP client (requires clangd).
 
 ;;; Code:
 
-(require 'lsp-mode)
-(require 'lsp-methods)
+(require 'lsp)
 
 ;; ---------------------------------------------------------------------
 ;;   Customization
 ;; ---------------------------------------------------------------------
 
 (defcustom lsp-sourcekit-executable
-  "ccls"
+  "sourcekit"
   "Path of the lsp-sourcekit executable."
   :type 'file
   :group 'sourcekit)
@@ -55,36 +54,18 @@
   :group 'sourcekit)
 
 ;; ---------------------------------------------------------------------
-;;   Notification handlers
-;; ---------------------------------------------------------------------
-
-(defvar lsp-sourcekit--handlers nil
-  "List of cons-cells of (METHOD . HANDLER) pairs, where METHOD is the lsp method to handle,
-and handler is a function invoked as (handler WORKSPACE PARAMS), where WORKSPACE is the current
-lsp-workspace, and PARAMS is a hashmap of the params received with the notification.")
-
-;; ---------------------------------------------------------------------
 ;;  Register lsp client
 ;; ---------------------------------------------------------------------
 
-(defun lsp-sourcekit--make-renderer (mode)
-  `(lambda (str)
-     (with-temp-buffer
-       (delay-mode-hooks (,(intern (format "%s-mode" mode))))
-       (insert str)
-       (font-lock-ensure)
-       (buffer-string))))
+(defun lsp-sourcekit--lsp-command ()
+  "Generate the language server startup command."
+  `(,lsp-sourcekit-executable
+    ,@lsp-sourcekit-extra-args))
 
-(defun sourcekit--initialize-client (client)
-  (dolist (p lsp-sourcekit--handlers)
-    (lsp-client-on-notification client (car p) (cdr p)))
-  (lsp-provide-marked-string-renderer client "swift" (lsp-sourcekit--make-renderer "swift")))
-
-;;;###autoload (autoload 'lsp-sourcekit-swift-enable "lsp-sourcekit")
-(lsp-define-stdio-client
- lsp-sourcekit-swift "swift" (lambda () default-directory)
- `(,lsp-sourcekit-executable ,@lsp-sourcekit-extra-args)
- :initialize #'sourcekit--initialize-client)
+(lsp-register-client
+ (make-lsp-client :new-connection (lsp-stdio-connection 'lsp-sourcekit--lsp-command)
+                  :major-modes '(swift-mode)
+                  :server-id 'sourcekit-ls))
 
 (provide 'lsp-sourcekit)
 ;;; lsp-sourcekit.el ends here

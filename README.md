@@ -22,4 +22,4 @@ Finally, add the following code to your `init.el`:
 (setq lsp-sourcekit-executable (expand-file-name "<path_to_sourcekit-lsp_executable>"))
 ```
 
-You can add `lsp-sourcekit-swift-enable` to your `swift-mode` hook and it will load sourcekit-lsp whenever you visit a `.swift` file.
+You can add `lsp` to your `swift-mode` hook and it will load sourcekit-lsp whenever you visit a `.swift` file.
