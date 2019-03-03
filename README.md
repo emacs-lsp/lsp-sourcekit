@@ -1,3 +1,5 @@
+[![Melpa Status](http://melpa.milkbox.net/packages/lsp-sourcekit-badge.svg)](http://melpa.milkbox.net/#/lsp-sourcekit)
+
 # lsp-sourcekit
 
 lsp-sourcekit is a client for [sourcekit-lsp](https://github.com/apple/sourcekit-lsp), a Swift/C/C++/Objective-C language server created by Apple.
