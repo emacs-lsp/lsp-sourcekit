@@ -14,13 +14,13 @@ Uses [lsp-mode](https://github.com/emacs-lsp/lsp-mode), but it's also open to be
 
 You need to download [sourcekit-lsp](https://github.com/apple/sourcekit-lsp) and follow their repo instructions to build it using Swift Package Manager, for example.
 
-After that, you need to download and install [a custom development Swift toolchain from Swift.org website](https://swift.org/builds/development/xcode/swift-DEVELOPMENT-SNAPSHOT-2018-11-01-a/swift-DEVELOPMENT-SNAPSHOT-2018-11-01-a-osx.pkg) (in the future, Apple plans to make sourcekit-lsp work with Swift release toolchains).
+After that, you need to download and install the [February 14th, 2019 Swift toolchain snapshot from Swift.org website](https://swift.org/download/#releases) (in the future, Apple plans to make sourcekit-lsp work with Swift release toolchains).
 
 Finally, add the following code to your `init.el`:
 
 ```elisp
 (require 'lsp-sourcekit)
-(setenv "SOURCEKIT_TOOLCHAIN_PATH" "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2018-12-07-a.xctoolchain")
+(setenv "SOURCEKIT_TOOLCHAIN_PATH" "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2019-02-14-a.xctoolchain")
 (setq lsp-sourcekit-executable (expand-file-name "<path_to_sourcekit-lsp_executable>"))
 ```
 
