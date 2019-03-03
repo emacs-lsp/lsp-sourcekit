@@ -24,4 +24,13 @@ Finally, add the following code to your `init.el`:
 (setq lsp-sourcekit-executable (expand-file-name "<path_to_sourcekit-lsp_executable>"))
 ```
 
+Or, if you use `use-package`:
+
+```elisp
+(use-package lsp-sourcekit
+  :config
+  (setenv "SOURCEKIT_TOOLCHAIN_PATH" "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2018-12-07-a.xctoolchain")
+  (setq lsp-sourcekit-executable (expand-file-name "<path_to_sourcekit-lsp_executable>")))
+```
+
 You can add `lsp` to your `swift-mode` hook and it will load sourcekit-lsp whenever you visit a `.swift` file.
