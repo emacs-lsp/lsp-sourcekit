@@ -42,3 +42,9 @@ You can add `lsp` to your `swift-mode` hook and it will load sourcekit-lsp whene
 ```
 
 Now visit a Swift file inside a Swift Package Manager project and lsp-sourcekit should start managing it and offering code intelligence.
+
+If you experiment problems, you can check things using a stable version of the Swift toolchain, like one included in a recent version of Xcode (10.2):
+
+```elisp
+(setenv "SOURCEKIT_TOOLCHAIN_PATH" "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain")
+```
