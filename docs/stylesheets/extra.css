@@ -1,0 +1,17 @@
+:root {
+  --md-primary-fg-color: #636363;
+  --md-accent-fg-color: #4084C6;
+  --md-default-fg-color--light: #AEAEAE;
+}
+
+.md-footer {
+  --md-default-fg-color: #636363;
+}
+
+.md-grid {
+  max-width: 70rem;
+}
+
+.md-typeset a {
+    color: #AEAEAE;
+}
