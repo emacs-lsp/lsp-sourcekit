@@ -34,7 +34,7 @@ If you don't use `use-package`:
   (progn
     (require 'lsp-sourcekit)
     (setq lsp-sourcekit-executable
-          (expand-file-name "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp"))))
+          "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp")))
 ```
 
 (On macOS, you can get the path to the SourceKit-LSP executable by running `xcrun --find sourcekit-lsp` in Terminal.)
