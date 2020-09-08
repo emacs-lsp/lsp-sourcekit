@@ -1,4 +1,4 @@
-[![Melpa Status](http://melpa.milkbox.net/packages/lsp-sourcekit-badge.svg)](http://melpa.milkbox.net/#/lsp-sourcekit)
+[![MELPA](https://melpa.org/packages/lsp-sourcekit-badge.svg)](https://melpa.org/#/lsp-sourcekit)
 
 # lsp-sourcekit
 
