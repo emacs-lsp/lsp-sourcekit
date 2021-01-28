@@ -40,7 +40,7 @@ If you don't use `use-package`:
 On macOS, you can get the path to the SourceKit-LSP executable by running `xcrun --find sourcekit-lsp` in Terminal. This also works to populate the path, if your emacs shell is configured correctly: 
 
 ```elisp
-(setq lsp-sourcekit-executable (string-trim-right (shell-command-to-string "xcrun --find sourcekit-lsp") "\n")))
+(setq lsp-sourcekit-executable (string-trim (shell-command-to-string "xcrun --find sourcekit-lsp")))
 ```
 
 - Finally, if you want to enable `lsp` automatically whenever you visit a `.swift` file:
