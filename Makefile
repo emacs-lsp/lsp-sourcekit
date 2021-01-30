@@ -6,20 +6,20 @@ CASK ?= cask
 LSP-SOURCEKIT-GENERAL := lsp-sourcekit.el
 
 all:
-	$(CASK) build
+    $(CASK) build
 
 build:
-	$(CASK) install
+    $(CASK) install
 
 compile:
-	@$(CASK) $(EMACS) -Q --batch \
-		-l test/windows-bootstrap.el \
-		-L . \
-		--eval '(setq byte-compile-error-on-warn t)' \
-		-f batch-byte-compile $(LSP-SOURCEKIT-GENERAL)
+    @$(CASK) $(EMACS) -Q --batch \
+        -l test/windows-bootstrap.el \
+        -L . \
+        --eval '(setq byte-compile-error-on-warn t)' \
+        -f batch-byte-compile *.el
 
 ci: CASK=
 ci: clean compile
 
 clean:
-	rm -rf .cask *.elc
+    rm -rf .cask *.elc
