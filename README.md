@@ -1,3 +1,4 @@
+[![Build Status](https://github.com/emacs-lsp/lsp-sourcekit/workflows/CI/badge.svg?branch=master)](https://github.com/emacs-lsp/lsp-sourcekit/actions)
 [![MELPA](https://melpa.org/packages/lsp-sourcekit-badge.svg)](https://melpa.org/#/lsp-sourcekit)
 
 # lsp-sourcekit
