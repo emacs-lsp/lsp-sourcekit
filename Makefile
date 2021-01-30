@@ -17,7 +17,7 @@ compile:
 		-l test/windows-bootstrap.el \
 		-L . \
 		--eval '(setq byte-compile-error-on-warn t)' \
-		-f batch-byte-compile $(LSP-SOURCEKIT-GENERAL)
+		-f batch-byte-compile *.el
 
 ci: CASK=
 ci: clean compile
