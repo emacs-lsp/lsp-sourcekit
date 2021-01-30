@@ -15,7 +15,7 @@ compile:
 	@$(CASK) $(EMACS) -Q --batch \
 		-l test/windows-bootstrap.el \
 		-L . \
-		--eval '(setq treemacs-no-load-time-warnings t)' \
+		--eval '(setq byte-compile-error-on-warn t)' \
 		-f batch-byte-compile $(LSP-SOURCEKIT-GENERAL)
 
 ci: CASK=
