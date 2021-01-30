@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -10,8 +8,9 @@
       
       
       
+      
       <link rel="shortcut icon" href="images/logo.svg">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
     
     
       
@@ -19,14 +18,18 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.4dd2dd8d.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.15aa0b43.min.css">
       
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.75751829.min.css">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -42,7 +45,13 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -60,7 +69,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="." title="LSP Sourcekit" class="md-header-nav__button md-logo" aria-label="LSP Sourcekit">
       
@@ -71,18 +82,20 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             LSP Sourcekit
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               Home
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
@@ -93,7 +106,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -134,8 +147,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
       
@@ -143,10 +154,16 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="." title="LSP Sourcekit" class="md-nav__button md-logo" aria-label="LSP Sourcekit">
       
@@ -175,6 +192,7 @@
       
       
 
+
   
 
 
@@ -190,7 +208,7 @@
         <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="." title="Home" class="md-nav__link md-nav__link--active">
+    <a href="." class="md-nav__link md-nav__link--active">
       Home
     </a>
     
@@ -242,7 +260,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -296,10 +315,8 @@
                   </a>
                 
                 
-                  
-                
-                
-                <p><a href="https://melpa.org/#/lsp-sourcekit"><img alt="MELPA" src="https://melpa.org/packages/lsp-sourcekit-badge.svg" /></a></p>
+                <p><a href="https://github.com/emacs-lsp/lsp-sourcekit/actions"><img alt="Build Status" src="https://github.com/emacs-lsp/lsp-sourcekit/workflows/CI/badge.svg?branch=master" /></a>
+<a href="https://melpa.org/#/lsp-sourcekit"><img alt="MELPA" src="https://melpa.org/packages/lsp-sourcekit-badge.svg" /></a></p>
 <h1 id="lsp-sourcekit">lsp-sourcekit<a class="headerlink" href="#lsp-sourcekit" title="Permanent link">#</a></h1>
 <p>lsp-sourcekit is a client for <a href="https://github.com/apple/sourcekit-lsp">SourceKit-lsp</a>, a Swift/C/C++/Objective-C language server created by Apple.</p>
 <p>Uses <a href="https://github.com/emacs-lsp/lsp-mode">lsp-mode</a>, but it's also open to be extended with additions outside of the LSP protocol, like semantic highlighting, if the server supports that.</p>
@@ -318,7 +335,6 @@
   <span class="nb">:config</span>
   <span class="p">(</span><span class="k">setq</span> <span class="nv">lsp-sourcekit-executable</span> <span class="s">&quot;/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp&quot;</span><span class="p">))</span>
 </code></pre></div>
-
 <p>If you don't use <code>use-package</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">eval-after-load</span> <span class="ss">&#39;lsp-mode</span>
   <span class="p">(</span><span class="k">progn</span>
@@ -326,19 +342,18 @@
     <span class="p">(</span><span class="k">setq</span> <span class="nv">lsp-sourcekit-executable</span>
           <span class="s">&quot;/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp&quot;</span><span class="p">)))</span>
 </code></pre></div>
-
-<p>(On macOS, you can get the path to the SourceKit-LSP executable by running <code>xcrun --find sourcekit-lsp</code> in Terminal.)</p>
+<p>On macOS, you can get the path to the SourceKit-LSP executable by running <code>xcrun --find sourcekit-lsp</code> in Terminal. This also works to populate the path, if your emacs shell is configured correctly: </p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">setq</span> <span class="nv">lsp-sourcekit-executable</span> <span class="p">(</span><span class="nv">string-trim</span> <span class="p">(</span><span class="nv">shell-command-to-string</span> <span class="s">&quot;xcrun --find sourcekit-lsp&quot;</span><span class="p">)))</span>
+</code></pre></div>
 <ul>
 <li>Finally, if you want to enable <code>lsp</code> automatically whenever you visit a <code>.swift</code> file:</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">use-package</span> <span class="nv">swift-mode</span>
   <span class="nb">:hook</span> <span class="p">(</span><span class="nv">swift-mode</span> <span class="o">.</span> <span class="p">(</span><span class="nb">lambda</span> <span class="p">()</span> <span class="p">(</span><span class="nv">lsp</span><span class="p">))))</span>
 </code></pre></div>
-
 <p>If you don't use <code>use-package</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;swift-mode-hook</span> <span class="p">(</span><span class="nb">lambda</span> <span class="p">()</span> <span class="p">(</span><span class="nv">lsp</span><span class="p">)))</span>
 </code></pre></div>
-
 <h2 id="advanced-setup">Advanced Setup<a class="headerlink" href="#advanced-setup" title="Permanent link">#</a></h2>
 <p>If you are using a custom Swift toolchain, a toolchain you compiled from source, or simply want to run SourceKit-LSP on a platform different from macOS, the above steps are almost the same, but you may need to set a different value for <code>lsp-sourcekit-executable</code>, or set a special environment variable to search for the corresponding toolchain. You can get further details in the <a href="https://github.com/apple/sourcekit-lsp">SourceKit-LSP</a> repository.</p>
                 
@@ -349,7 +364,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 8, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2021</span>
     
   </small>
 </div>
@@ -416,15 +431,15 @@
       
     </div>
     
-      <script src="assets/javascripts/vendor.3636a4ec.min.js"></script>
-      <script src="assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: ".",
           features: [],
           search: Object.assign({
-            worker: "assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "assets/javascripts/worker/search.8c7e0a7e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
