@@ -12,11 +12,12 @@ build:
     $(CASK) install
 
 compile:
+    @echo "Compiling..."
     @$(CASK) $(EMACS) -Q --batch \
         -l test/windows-bootstrap.el \
         -L . \
         --eval '(setq byte-compile-error-on-warn t)' \
-        -f batch-byte-compile *.el
+        -f batch-byte-compile $(LSP-SOURCEKIT-GENERAL)
 
 ci: CASK=
 ci: clean compile
