@@ -40,32 +40,49 @@
 ;; ---------------------------------------------------------------------
 ;;   Customization
 ;; ---------------------------------------------------------------------
+(defgroup lsp-sourcekit nil
+  "LSP support for swift, using sourcekit-lsp."
+  :group 'lsp-mode
+  :prefix "lsp-sourcekit-"
+  :link '(url-link "https://github.com/apple/sourcekit-lsp"))
 
-(defcustom lsp-sourcekit-executable
-  "sourcekit"
-  "Path of the lsp-sourcekit executable."
-  :type 'file
-  :group 'sourcekit)
+(defcustom lsp-sourcekit-executable "sourcekit-lsp"
+  "Path of the sourcekit-lsp executable."
+  :group 'lsp-sourcekit
+  :type 'file)
 
-(defcustom lsp-sourcekit-extra-args
-  nil
+(defcustom lsp-sourcekit-extra-args nil
   "Additional command line options passed to the lsp-sourcekit executable."
   :type '(repeat string)
-  :group 'sourcekit)
+  :group 'lsp-sourcekit)
+
+
+;;;###autoload
+(defun lsp-sourcekit--find-executable-with-xcrun ()
+  "sourcekit-lsp may be installed behind xcrun; if we can't find
+the `lsp-sourcekit-executable' on PATH, try it with xcrun."
+  (and (not (file-name-absolute-p lsp-sourcekit-executable))
+       (executable-find "xcrun")
+       (with-demoted-errors "lsp-sourcekit: find server with xcrun(1): %S"
+         (car-safe (process-lines "xcrun" "--find" lsp-sourcekit-executable)))))
+
 
 ;; ---------------------------------------------------------------------
 ;;  Register lsp client
 ;; ---------------------------------------------------------------------
+;;;###autoload
+(with-eval-after-load 'lsp-mode
+  (lsp-dependency
+   'sourcekit-lsp
+   (list :system 'lsp-sourcekit-executable)
+   (list :system #'lsp-sourcekit--find-executable-with-xcrun))
 
-(defun lsp-sourcekit--lsp-command ()
-  "Generate the language server startup command."
-  `(,lsp-sourcekit-executable
-    ,@lsp-sourcekit-extra-args))
 
-(lsp-register-client
- (make-lsp-client :new-connection (lsp-stdio-connection 'lsp-sourcekit--lsp-command)
-                  :major-modes '(swift-mode)
-                  :server-id 'sourcekit-ls))
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection
+                                     (apply-partially #'lsp-package-path 'sourcekit-lsp))
+                    :major-modes '(swift-mode)
+                    :server-id 'sourcekit-ls)))
 
 (provide 'lsp-sourcekit)
 ;;; lsp-sourcekit.el ends here
