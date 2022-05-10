@@ -1,26 +1,26 @@
 .PHONY: all compile clean
 
 EMACS ?= emacs
-CASK ?= cask
+EASK ?= eask
 
 LSP-SOURCEKIT-GENERAL := lsp-sourcekit.el
 
-all:
-	$(CASK) build
+ci: clean build compile checkdoc lint
 
 build:
-	$(CASK) install
+	$(EASK) package
+	$(EASK) install
 
 compile:
 	@echo "Compiling..."
-	@$(CASK) $(EMACS) -Q --batch \
-		-l test/windows-bootstrap.el \
-		-L . \
-		--eval '(setq byte-compile-error-on-warn t)' \
-		-f batch-byte-compile *.el
+	@$(EASK) compile
 
-ci: CASK=
-ci: clean compile
+checkdoc:
+	$(EASK) checkdoc
+
+lint:
+	@echo "package linting..."
+	$(EASK) lint
 
 clean:
-	rm -rf .cask *.elc
+	$(EASK) clean-all
