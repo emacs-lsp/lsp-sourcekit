@@ -16,11 +16,11 @@ compile:
 	@$(EASK) compile
 
 checkdoc:
-	$(EASK) checkdoc
+	$(EASK) lint checkdoc
 
 lint:
 	@echo "package linting..."
-	$(EASK) lint
+	$(EASK) lint package
 
 clean:
 	$(EASK) clean-all
