@@ -81,7 +81,7 @@ the `lsp-sourcekit-executable' on PATH, try it with xcrun."
   (lsp-register-client
    (make-lsp-client :new-connection (lsp-stdio-connection
                                      (lambda ()(cons lsp-sourcekit-executable lsp-sourcekit-extra-args)))
-                    :major-modes '(swift-mode)
+                    :major-modes '(swift-mode swift-ts-mode)
                     :server-id 'sourcekit-ls)))
 
 (provide 'lsp-sourcekit)
