@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "lsp-sourcekit"
          "0.1"
          "sourcekit-lsp client for lsp-mode")
