@@ -1,6 +1,7 @@
 ;;; lsp-sourcekit.el --- sourcekit-lsp client for lsp-mode     -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2018 Daniel Martín
+;; Copyright (C) 2018-2025  emacs-lsp maintainers
 
 ;; Author: Daniel Martín
 ;; Version: 0.1
