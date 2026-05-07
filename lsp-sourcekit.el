@@ -1,12 +1,12 @@
 ;;; lsp-sourcekit.el --- sourcekit-lsp client for lsp-mode     -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2018 Daniel Martín
-;; Copyright (C) 2018-2025  emacs-lsp maintainers
+;; Copyright (C) 2018-2026  emacs-lsp maintainers
 
 ;; Author: Daniel Martín
 ;; Version: 0.1
 ;; Homepage: https://github.com/emacs-lsp/lsp-sourcekit
-;; Package-Requires: ((emacs "28.1") (lsp-mode "5"))
+;; Package-Requires: ((emacs "29.1") (lsp-mode "5"))
 ;; Keywords: languages, lsp, swift, objective-c, c++
 
 ;; Permission is hereby granted, free of charge, to any person obtaining a copy
